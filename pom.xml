@@ -10,6 +10,7 @@
     <modules>
         <module>DSA-LEETCODE</module>
         <module>DSA-GRID</module>
+        <module>NeetCode</module>
     </modules>
     <properties>
         <java.version>21</java.version>

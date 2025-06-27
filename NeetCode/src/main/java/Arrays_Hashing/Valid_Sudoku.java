@@ -1,8 +1,12 @@
-class Solution {
+package Arrays_Hashing;
+
+import java.util.*;
+
+class Valid_Sudoku {
     public boolean validSudoku(char[][] board) {
         Map<Integer, Set<Integer>> colSet = new HashMap<>();
         Map<Integer, Set<Integer>> rowSet = new HashMap<>();
-        Map<Integer, Set<Integer>> squareSet = new HashMap<>();
+        Map<Map.Entry<Integer, Integer>, Set<Integer>> squareSet = new HashMap<>();
 
         int sizeSudoku = 9;
         for (int row = 0; row < sizeSudoku; row++) {
@@ -24,7 +28,7 @@ class Solution {
                     rowSet.get(row).add(val);
 
                     // Validate Squares
-                    Pair<Integer, Integer> myPair = new Pair((int) (row / 3), (int) col / 3);
+                    Map.Entry<Integer, Integer> myPair = new AbstractMap.SimpleEntry<>((int) row / 3, (int) col / 3);
                     squareSet.putIfAbsent(myPair, new HashSet<>());
                     if (squareSet.get(myPair).contains(val))
                         return false;

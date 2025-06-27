@@ -1,4 +1,8 @@
-class Solution {
+package Arrays_Hashing;
+
+import java.util.*;
+
+class Group_Anagrams {
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> myMap = new HashMap<>();
 
@@ -11,8 +15,6 @@ class Solution {
             myMap.get(strAux).add(s);
         }
 
-        List<List<String>> result = new ArrayList<>();
-        result.addAll(myMap.values());
-        return result;
+        return new ArrayList<>(myMap.values());
     }
 }

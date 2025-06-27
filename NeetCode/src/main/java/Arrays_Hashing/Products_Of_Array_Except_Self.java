@@ -1,9 +1,13 @@
-class Solution {
+package Arrays_Hashing;
+
+import java.util.Arrays;
+
+class Products_Of_Array_Except_Self {
     public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         int aux;
-        int postfix = new int[n];
-        int prefix = new int[n];
+        int[] postfix = new int[n];
+        int[] prefix = new int[n];
 
         Arrays.fill(postfix, 1);
         Arrays.fill(prefix, 1);
@@ -20,7 +24,7 @@ class Solution {
             postfix[i] = aux;
         }
 
-        int result = new int[n];
+        int[] result = new int[n];
         for (int i = 0; i < n; i++)
             result[i] = prefix[i] * postfix[i];
 

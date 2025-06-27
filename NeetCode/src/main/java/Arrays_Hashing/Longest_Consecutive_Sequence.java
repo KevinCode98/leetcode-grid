@@ -1,4 +1,9 @@
-class Solution {
+package Arrays_Hashing;
+
+import java.util.HashSet;
+import java.util.Set;
+
+class Longest_Consecutive_Sequence {
     public int longestConsecutive(int[] nums) {
         Set<Integer> mySet = new HashSet<>();
         for (int num : nums)
